@@ -94,5 +94,17 @@ const initialState = [
   }
   
   // Add selector export statments below
+  /*
+  [
+    {id: 0, contents: 'Provider'},
+    {id: 1, contents: 'Provider'}
+  ]
+  */
+
+export const selectBoard = state => state.board.map( card => ({id: card.id, contents: card.contents}));
+
+export  const selectVisibleIDs = state => state.board.filter(card => card.visible).map(card => card.id);
+
+export const selectMatchesIDs = state => state.board.filter( card => card.matched).map( card => card.id);
   
   
